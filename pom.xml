@@ -17,12 +17,25 @@
     <properties>
         <java.version>11</java.version>
         <jackson-version>2.10.0</jackson-version>
+        <springfox-version>2.9.2</springfox-version>
+        <swagger-codegen-version>2.4.10</swagger-codegen-version>
     </properties>
 
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter</artifactId>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-starter-logging</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+            <version>1.2.3</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -31,12 +44,16 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
-            <version>2.2.2.RELEASE</version>
         </dependency>
         <dependency>
             <groupId>io.springfox</groupId>
             <artifactId>springfox-swagger2</artifactId>
-            <version>2.9.2</version>
+            <version>${springfox-version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger-ui</artifactId>
+            <version>${springfox-version}</version>
         </dependency>
         <dependency>
             <groupId>javax.xml.bind</groupId>
@@ -52,17 +69,12 @@
         <dependency>
             <groupId>io.swagger</groupId>
             <artifactId>swagger-codegen-maven-plugin</artifactId>
-            <version>2.4.10</version>
+            <version>${swagger-codegen-version}</version>
         </dependency>
         <dependency>
             <groupId>io.swagger</groupId>
             <artifactId>swagger-codegen</artifactId>
-            <version>2.4.10</version>
-        </dependency>
-        <dependency>
-            <groupId>com.github.joschi.jackson</groupId>
-            <artifactId>jackson-datatype-threetenbp</artifactId>
-            <version>${jackson-version}</version>
+            <version>${swagger-codegen-version}</version>
         </dependency>
         <dependency>
             <groupId>com.github.joschi.jackson</groupId>
