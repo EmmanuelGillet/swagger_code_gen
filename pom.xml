@@ -121,6 +121,7 @@
                             <inputSpec>${project.basedir}/src/main/resources/api.yaml</inputSpec>
                             <language>spring</language>
                             <configOptions>
+                                <interfaceOnly>true</interfaceOnly>
                                 <sourceFolder>src/gen/java/main</sourceFolder>
                             </configOptions>
                         </configuration>
